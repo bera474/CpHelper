@@ -52,9 +52,10 @@ int main() {
 
   int q; cin >> q; while (q--) {
     string t; cin >> t;
-    // This func will check whether t is a substr of s or not
-    auto is_substr = [&](string &t) -> bool {
-      // compare func return -1 if s small, 0 if s same, 1 if s big
+    // This func will return no of substr equal to t in s
+    auto cnt_substr = [&](string &t) -> int {
+      // it compares string s ans t
+      // return -1 if s small, 0 if s same, 1 if s big
       auto compare = [&](int idx) -> int {
         for (int j = 0; j < t.size(); j++) {
           if (s[idx + j] == t[j]) continue;
@@ -62,14 +63,19 @@ int main() {
         } return 0;
       };
 
-      int L = 0, H = n - 1;
-      while (L <= H) {
-        int M = (L + H) / 2;
-        int val = compare(p[M]);
-        if (val == 0) return 1;
-        (val == -1 ? L = M + 1 : H = M - 1);
-      } return 0;
+      int l = -1, r = n;
+      while (r > l + 1) {
+        int m = (l + r) / 2;
+        compare(p[m]) < 0 ? l = m : r = m;
+      }
+
+      int l1 = -1; r = n;
+      while (r > l1 + 1) {
+        int m = (l1 + r) / 2;
+        compare(p[m]) > 0 ? r = m : l1 = m;
+      }
+      return r - l - 1;
     };
-    cout << (is_substr(t) ? "Yes" : "No") << endl;
+    cout << cnt_substr(t) << '\n';
   } return 0;
 }

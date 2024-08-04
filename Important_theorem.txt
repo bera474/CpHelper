@@ -1,3 +1,4 @@
 1. Chicken McNugget Theorem.
 2. Euler's Theorem for modular division
-3. 
+3. Peak's Theorem
+4. https://github.com/Errichto/youtube/wiki/Learning-resources

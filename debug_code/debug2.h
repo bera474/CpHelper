@@ -44,7 +44,7 @@ template <typename T> void __print(queue<T> q);
 /* Template Datatypes Definitions */
 template <typename T> void __print(T &&x) {
   /*  This works for every container that supports range-based loop
-      i.e. vector, set, map, oset, omap, dequeue */
+      i.e. vector, set, map, o_set, o_map, dequeue */
   int f = 0;
   cerr << '{';
   for (auto &&i : x)
@@ -113,7 +113,7 @@ template <typename T> void __print(queue<T> q) {
 void printer(const char *) {} /* Base Recursive */
 template <typename T, typename... V>
 void printer(const char *names, T &&head, V &&...tail) {
-  /* Using && to capture both lvalues and rvalues */
+  /* Using && to capture both l_values and r_values */
   int i = 0;
   for (size_t bracket = 0;
        names[i] != '\0' and (names[i] != ',' or bracket != 0); i++)
