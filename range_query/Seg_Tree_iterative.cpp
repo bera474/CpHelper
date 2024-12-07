@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
+typedef long long ll;
 const int MX = (1LL << 31) - 1;
 
 struct Node {
@@ -45,20 +45,3 @@ struct SegTree {
     return merge(res_l, res_r);
   }
 };
-
-int main() {
-  vector<int> v = {1, 2, 3};
-  SegTree sgt(v);
-  for (auto it : sgt.seg) {
-    cout << it.val << ' ';
-  }
-  cout << '\n';
-  cout << sgt.query(0, 2).val << '\n';
-  sgt.update(2, 4);
-  for (auto it : sgt.seg) {
-    cout << it.val << ' ';
-  }
-  cout << '\n';
-  cout << sgt.query(0, 2).val << '\n';
-  return 0;
-}

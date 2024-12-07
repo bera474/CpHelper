@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 typedef long long ll;
 const int base = 31;
 const ll mod = 1000000009;
@@ -50,12 +47,3 @@ struct Hashing {
     return (((rgt - lft + mod) % mod) * inv_pwr[l]) % mod;
   }
 };
- 
-void solve(){
-
-}
-
-int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0); solve(); return 0;
-}
