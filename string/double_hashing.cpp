@@ -1,8 +1,4 @@
-#include <bits/stdc++.h>
-
-using namespace std;
 typedef long long ll;
-
 
 ll expo(ll a, ll b, ll mod) {
   ll res = 1;

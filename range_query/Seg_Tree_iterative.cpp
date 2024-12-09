@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 typedef long long ll;
 const int MX = (1LL << 31) - 1;
 

@@ -1,7 +1,4 @@
 // It takes n*log(n) time complexity
-#include <bits/stdc++.h>
-using namespace std;
-
 typedef vector<int> vi;
 typedef pair<int, int> pi;
 

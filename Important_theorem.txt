@@ -2,3 +2,9 @@
 2. Euler's Theorem for modular division
 3. Peak's Theorem
 4. https://github.com/Errichto/youtube/wiki/Learning-resources
+5. To blow unordered_map 17 -> 53201, 20 -> 85229
+
+Books:
+An Exploration of Olympiad combinatorics - Rushil Mathur
+Euclidean Geometry in Mathamatical Olympiads - Evan Chen
+Number Theory - Aditya Khurmi

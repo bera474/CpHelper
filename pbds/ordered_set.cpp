@@ -5,12 +5,12 @@ using namespace std;
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 
-typedef tree<int, null_type, less<int>, rb_tree_tag,
-             tree_order_statistics_node_update>
-    ordered_set; // find_by_order, order_of_key
+template <typename T>
+using Tree = tree<int, null_type, less<int>, rb_tree_tag,
+tree_order_statistics_node_update>; // find_by_order, order_of_key
 
 int main() {
-  ordered_set o_set; // declaration
+  Tree<int> o_set; // declaration
 
   // Inserting elements - 1st query
   o_set.insert(1);

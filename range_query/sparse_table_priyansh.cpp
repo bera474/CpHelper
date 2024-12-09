@@ -2,6 +2,7 @@
 // Supports multiple sparse tables with minor change in Node
 
 // src: https://tinyurl.com/k99arhak
+typedef long long ll;
 
 template <typename Node> 
 struct SparseTable {
@@ -57,10 +58,8 @@ struct SparseTable {
 };
 
 struct Node1 {
-  ll val;   // store more info if required
-  Node1() { // Identity Element
-    val = 0;
-  }
+  ll val;
+  Node1() { val = 0; }
   Node1(ll v) { val = v; }
   void merge(Node1 &l, Node1 &r) { val = l.val ^ r.val; }
 };

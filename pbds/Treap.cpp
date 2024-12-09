@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long
+typedef long long ll;
 
 #include <bits/stdtr1c++.h>
 #include <ext/pb_ds/assoc_container.hpp>
@@ -63,10 +63,3 @@ struct Treap { /// hash = 96814
   /// Number of elements in treap
   inline int size() { return len; }
 };
-
-
-int main() {
-  Treap tr;
-
-  return 0;
-}

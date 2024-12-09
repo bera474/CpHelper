@@ -1,10 +1,8 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-#define ll long long
+typedef long long ll;
 const int mod = 1000000007;
 
-// modular int from @snuke template
+// // modular int from @snuke template
+// // src: https://atcoder.jp/contests/dp/submissions/3939236
 
 struct mint {
   ll x;
@@ -27,10 +25,11 @@ ostream &operator<<(ostream &o, const mint &a) { o << a.x; return o; }
 
 /*With more operators like division*/
 
-// #define ll long long
+// typedef long long ll;
 // const int mod = 1000000007;
 
 // // modular int from @snuke template
+// // src: https://atcoder.jp/contests/dp/submissions/3939236
 
 // struct mint {
 //   ll x;
@@ -54,9 +53,3 @@ ostream &operator<<(ostream &o, const mint &a) { o << a.x; return o; }
 // };
 // istream &operator>>(istream &i, mint &a) { i >> a.x; return i; }
 // ostream &operator<<(ostream &o, const mint &a) { o << a.x; return o; }
-
-int main() {
-  ios_base::sync_with_stdio(true);
-  cin.tie(NULL);
-  return 0;
-}
