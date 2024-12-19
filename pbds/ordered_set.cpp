@@ -6,7 +6,7 @@ using namespace std;
 using namespace __gnu_pbds;
 
 template <typename T>
-using Tree = tree<int, null_type, less<int>, rb_tree_tag,
+using Tree = tree<T, null_type, less<T>, rb_tree_tag,
 tree_order_statistics_node_update>; // find_by_order, order_of_key
 
 int main() {
