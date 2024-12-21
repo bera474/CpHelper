@@ -61,11 +61,9 @@
   },
 
   "code-runner.executorMap": {
-  
-
     "javascript": "node",
     // "php": "C:\\php\\php.exe",
-   "python": "& \"C:\\Program Files\\Python312\\python.exe\" -u",
+    "python": "& \"C:\\Program Files\\Python312\\python.exe\" -u",
     // "perl": "perl",
     // "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
     // "go": "go run",
@@ -78,7 +76,6 @@
     "editor.defaultFormatter": "xaver.clang-format"
   },
   "code-runner.executorMapByFileExtension": {
-    
     ".vb": "cd $dir && vbc /nologo $fileName && $dir$fileNameWithoutExt",
     ".vbs": "cscript //Nologo",
     ".scala": "scala",
@@ -117,6 +114,5 @@
     ".gleam": "gleam run -m $fileNameWithoutExt",
     ".py": "python -u"
   },
-  "cph.language.c.Command": "clang",
-  "cph.language.cpp.Command": "clang++"
+  "C_Cpp.default.compilerPath": ""
 }
