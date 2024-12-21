@@ -1,0 +1,122 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 20,
+  "editor.accessibilitySupport": "off",
+  "code-runner.saveAllFilesBeforeRun": true,
+  "code-runner.saveFileBeforeRun": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "workbench.startupEditor": "none",
+  "explorer.confirmDelete": true,
+  "editor.mouseWheelZoom": true,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "[html]": {
+    // "editor.defaultFormatter": "<another formatter>"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "code-runner.runInTerminal": true,
+  "code-runner.clearPreviousOutput": true,
+  "workbench.editorAssociations": {
+    "*.dat": "default"
+  },
+  "window.zoomLevel": 1,
+  "cph.general.defaultLanguage": "cpp",
+  "cph.general.timeOut": 2000,
+  "cph.general.firstTime": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cph.general.saveLocation": "D:\\Coding\\exeFiles",
+  "cph.general.defaultLanguageTemplateFileLocation": "D:\\Coding\\C++\\Temp\\tmp.cpp",
+  "cph.general.ignoreSTDERROR": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "[c]": {
+    // "editor.defaultFormatter": "xaver.clang-format",
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true
+  },
+  "[cpp]": {
+    // "editor.defaultFormatter": "xaver.clang-format",
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "clang-format.executable": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
+  "editor.wordWrap": "wordWrapColumn",
+  "workbench.preferredDarkColorTheme": "Monokai Pro",
+  "workbench.preferredHighContrastColorTheme": "Monokai Pro",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.editor.enablePreview": false,
+  "tabnine.experimentalAutoImports": true,
+  "workbench.colorTheme": "Monokai Pro",
+  "interactiveWindow.executeWithShiftEnter": true,
+  "code-runner.executorMapByGlob": {
+    "pom.xml": "cd $dir && mvn clean package"
+  },
+
+  "code-runner.executorMap": {
+  
+
+    "javascript": "node",
+    // "php": "C:\\php\\php.exe",
+   "python": "& \"C:\\Program Files\\Python312\\python.exe\" -u",
+    // "perl": "perl",
+    // "ruby": "C:\\Ruby23-x64\\bin\\ruby.exe",
+    // "go": "go run",
+    "html": "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe\"",
+    // "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+  },
+  "accessibility.signalOptions.volume": 30,
+  "[java]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "code-runner.executorMapByFileExtension": {
+    
+    ".vb": "cd $dir && vbc /nologo $fileName && $dir$fileNameWithoutExt",
+    ".vbs": "cscript //Nologo",
+    ".scala": "scala",
+    ".jl": "julia",
+    ".cr": "crystal",
+    ".ml": "ocaml",
+    ".zig": "zig run",
+    ".exs": "elixir",
+    ".hx": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    ".rkt": "racket",
+    ".scm": "csi -script",
+    ".ahk": "autohotkey",
+    ".au3": "autoit3",
+    ".kt": "cd $dir && kotlinc $fileName -include-runtime -d $fileNameWithoutExt.jar && java -jar $fileNameWithoutExt.jar",
+    ".kts": "kotlinc -script",
+    ".dart": "dart",
+    ".pas": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    ".pp": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    ".d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    ".hs": "runhaskell",
+    ".nim": "nim compile --verbosity:0 --hints:off --run",
+    ".csproj": "dotnet run --project",
+    ".fsproj": "dotnet run --project",
+    ".lisp": "sbcl --script",
+    ".kit": "kitc --run",
+    ".v": "v run",
+    ".vsh": "v run",
+    ".sass": "sass --style expanded",
+    ".cu": "cd $dir && nvcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    ".ring": "ring",
+    ".sml": "cd $dir && sml $fileName",
+    ".mojo": "mojo run",
+    ".erl": "escript",
+    ".spwn": "spwn build",
+    ".pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
+    ".gleam": "gleam run -m $fileNameWithoutExt",
+    ".py": "python -u"
+  },
+  "cph.language.c.Command": "clang",
+  "cph.language.cpp.Command": "clang++"
+}
