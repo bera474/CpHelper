@@ -1,28 +1,20 @@
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
-
-
-template <typename T>
-class SparseTable {
+template <typename T> class DisjointSparseTable {
   int n;
   vector<vector<T>> mat;
   inline T merge(T a, T b) const { return (a + b); }
 
 public:
-  SparseTable(const vector<T> &a) : n(int(a.size())) {
+  DisjointSparseTable(const vector<T> &a) : n(int(a.size())) {
     mat.push_back(a);
     for (int p = 1; (1 << p) < n; p++) {
       mat.emplace_back(n);
       for (int mid = 1 << p; mid < n; mid += 1 << (p + 1)) {
         mat[p][mid - 1] = a[mid - 1];
-        for (int j = mid - 2; j >= mid - (1 << p); j--) {
+        for (int j = mid - 2; j >= mid - (1 << p); j--)
           mat[p][j] = merge(a[j], mat[p][j + 1]);
-        }
         mat[p][mid] = a[mid];
-        for (int j = mid + 1; j < min(n, mid + (1 << p)); j++) {
+        for (int j = mid + 1; j < min(n, mid + (1 << p)); j++)
           mat[p][j] = merge(mat[p][j - 1], a[j]);
-        }
       }
     }
   }
@@ -32,27 +24,7 @@ public:
     assert(0 <= l && l < r && r <= n);
     if (r - l == 1) return mat[0][l];
     int p = 31 - __builtin_clz(l ^ (r - 1));
+    // int p = bit_width(unsigned(l ^ (r - 1))) - 1;
     return merge(mat[p][l], mat[p][r - 1]);
   }
 };
-
-
-void solve() {
-  int n, q;
-  cin >> n >> q;
-
-  vector<ll> v(n);
-  for (ll &x : v)
-    cin >> x;
-
-  SparseTable<ll> st(v);
-  while (q--) {
-    int l, r; cin >> l >> r;
-    cout << st.Query(l - 1, r) << '\n';
-  }
-}
-
-int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0); solve(); return 0;
-}
