@@ -3,6 +3,7 @@
 3. Peak's Theorem
 4. https://github.com/Errichto/youtube/wiki/Learning-resources
 5. To blow unordered_map 17 -> 53201, 20 -> 85229
+const vector<int> GCC7_PRIMES = {12983, 26267, 53201, 107897, 218971, 444487};
 
 Books:
 An Exploration of Olympiad combinatorics - Rushil Mathur
