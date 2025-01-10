@@ -1,6 +1,6 @@
 int LongestPalindromicPrefix(string s) {
   string t = s + '?';
-  reverse(s.begin(), s.end());
+  reverse(begin(s), end(s));
   t += s; int n = t.length();
   vector<int> lps(n, 0);
   for (int i = 1; i < n; i++) {
