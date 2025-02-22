@@ -1,35 +1,47 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+#include <algorithm>
 
 __int128 read() {
-  __int128 x = 0, f = 1;
-  char ch = getchar();
-  while (ch < '0' || ch > '9') {
-    if (ch == '-')
-      f = -1;
-    ch = getchar();
-  }
-  while (ch >= '0' && ch <= '9') {
-    x = x * 10 + ch - '0';
-    ch = getchar();
-  }
-  return x * f;
+    std::string s;
+    std::cin >> s;
+    __int128 x = 0, f = 1;
+    int i = 0;
+    if (s[0] == '-') {
+        f = -1; i = 1;
+    }
+    for (; i < s.size(); i++) {
+        x = x * 10 + (s[i] - '0');
+    }
+    return x * f;
 }
+
 void print(__int128 x) {
-  if (x < 0) {
-    putchar('-');
-    x = -x;
-  }
-  if (x > 9)
-    print(x / 10);
-  putchar(x % 10 + '0');
+    if (x == 0) {
+        std::cout << "0\n";
+        return;
+    }
+    if (x < 0) {
+        std::cout << "-";
+        x = -x;
+    }
+    std::string s;
+    while (x > 0) {
+        s.push_back((x % 10) + '0');
+        x /= 10;
+    }
+    std::reverse(s.begin(), s.end());
+    std::cout << s << "\n";
 }
-bool cmp(__int128 x, __int128 y) { return x > y; }
 
 int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-  __int128 a = read();
-  print(a);
-  return 0;
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    int t;
+    std::cin >> t;
+    while (t--) {
+        __int128 a = read();
+        __int128 b = read();
+        print(a + b);
+    }
+    return 0;
 }
