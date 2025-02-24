@@ -2,7 +2,7 @@
 #include <limits>
 #include <stack>
 
-namespace Suman {
+namespace suman {
 
 template <typename T> class Two_stk {
 private:
@@ -66,7 +66,7 @@ public:
     }
 };
 
-} // namespace Suman
+} // namespace suman
 
 #include <iostream>
 #include <vector>
@@ -82,7 +82,7 @@ int main() {
         std::cin >> v[i];
     }
 
-    Suman::MNX_stk<int> stk;
+    suman::MNX_stk<int> stk;
 
     for (int i = 0; i < k; i++) {
         stk.push(v[i]);
