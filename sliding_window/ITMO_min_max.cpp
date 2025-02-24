@@ -1,60 +1,100 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define ll long long
-const ll inf = 2e18;
+#include <cassert>
+#include <limits>
+#include <stack>
 
-struct stk {
-  vector<ll> s, smin = {inf}, smax = {-inf};
-  void push(ll x) {
-    s.push_back(x);
-    smin.push_back(::min(smin.back(), x));
-    smax.push_back(::max(smax.back(), x));
-  }
-  ll pop() {
-    ll res = s.back();
-    s.pop_back();
-    smin.pop_back();
-    smax.pop_back();
-    return res;
-  }
-  bool empty() { return s.empty(); }
-  ll max() { return smax.back(); }
-  ll min() { return smin.back(); }
-};
+namespace Suman {
 
-struct mnx_stk {
-  stk s1, s2;
-  void push(ll x) { s2.push(x); }
-  void pop() {
-    if (s1.empty()) {
-      while (!s2.empty())
-        s1.push(s2.pop());
+template <typename T> class Two_stk {
+private:
+    std::stack<T> stk;
+    std::stack<T> min_stk;
+    std::stack<T> max_stk;
+
+public:
+    Two_stk() {
+        min_stk.push(std::numeric_limits<T> ::max());
+        max_stk.push(std::numeric_limits<T> ::min());
     }
-    s1.pop();
-  }
-  ll max() { return ::max(s1.max(), s2.max()); }
-  ll min() { return ::min(s1.min(), s2.min()); }
+
+    void push(T x) {
+        stk.push(x);
+        min_stk.push(std::min(min_stk.top(), x));
+        max_stk.push(std::max(max_stk.top(), x));
+    }
+
+    T pop() {
+        assert(!stk.empty());
+        T res = stk.top();
+        stk.pop();
+        min_stk.pop();
+        max_stk.pop();
+        return res;
+    }
+
+    bool empty() { return stk.empty(); }
+
+    T max() { return max_stk.top(); }
+
+    T min() { return min_stk.top(); }
 };
 
+template <typename T> class MNX_stk {
+private:
+    Two_stk<T> stk1, stk2;
+
+public:
+    void push(T x) { stk2.push(x); }
+
+    void pop() {
+        assert(!stk1.empty() || !stk2.empty());
+        if (stk1.empty()) {
+            while (!stk2.empty()) {
+                stk1.push(stk2.pop());
+            }
+        }
+        stk1.pop();
+    }
+
+    T max() {
+        assert(!stk1.empty() || !stk2.empty());
+        return std::max(stk1.max(), stk2.max());
+    }
+
+    T min() {
+        assert(!stk1.empty() || !stk2.empty());
+        return std::min(stk1.min(), stk2.min());
+    }
+};
+
+} // namespace Suman
+
+#include <iostream>
+#include <vector>
 
 int main() {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-  ll n, k;
-  cin >> n >> k;
-  vector<ll> v(n);
-  for (ll &x : v)
-    cin >> x;
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  mnx_stk st;
+    int n, k;
+    std::cin >> n >> k;
+    std::vector<int> v(n);
+    for (int i = 0; i < n; i++) {
+        std::cin >> v[i];
+    }
 
-  for (int i = 0; i < k; i++)
-    st.push(v[i]);
-  cout << st.min() << ' ' << st.max() << '\n';
+    Suman::MNX_stk<int> stk;
 
-  for (int i = k; i < n; i++) {
-      st.push(v[i]); st.pop();
-      cout << st.min() << ' ' << st.max() << '\n';
-  }
-  return 0;
+    for (int i = 0; i < k; i++) {
+        stk.push(v[i]);
+    }
+
+    std::cout << stk.min() << ' ' << stk.max() << '\n';
+
+    for (int i = k; i < n; i++) {
+        stk.push(v[i]);
+        stk.pop();
+        std::cout << stk.min() << ' ' << stk.max() << '\n';
+    }
+    
+    return 0;
 }
