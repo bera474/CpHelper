@@ -1,9 +1,10 @@
 // MaxFlow from @jiangly template
 // https://codeforces.com/contest/2061/submission/302102508
 
-template<class T> struct MaxFlow { // O(V^2 * E)
+template <class T> struct MaxFlow { // O(V^2 * E)
     struct _Edge {
-        int to; T cap;
+        int to;
+        T cap;
         _Edge(int to, T cap) : to(to), cap(cap) {}
     };
     int n;
@@ -11,9 +12,7 @@ template<class T> struct MaxFlow { // O(V^2 * E)
     vector<vector<int>> g;
     vector<int> cur, h;
     MaxFlow() {}
-    MaxFlow(int n) {
-        init(n);
-    }
+    MaxFlow(int n) { init(n); }
     void init(int n) {
         this->n = n;
         e.clear();
