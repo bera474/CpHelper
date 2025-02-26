@@ -1,5 +1,6 @@
-#include <bits/stdc++.h>
-using namespace std;
+// HLD Template from galen_colin blog
+// blog: https://codeforces.com/blog/entry/81317
+// source code: https://pastebin.com/PAcBNmcu
 
 template <int size, int lg, typename seg_t = long long> struct hld {
     vector<int> edges[size];
@@ -273,5 +274,3 @@ template <int size, int lg, typename seg_t = long long> struct hld {
         seg_update_header(label[lc], label[lc], val);
     }
 };
-
-int main() { return 0; }
