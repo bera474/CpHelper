@@ -4,16 +4,16 @@
 
 namespace suman {
 
-template <typename T> class Two_stk {
-private:
+template <typename T> class Stk {
+  private:
     std::stack<T> stk;
     std::stack<T> min_stk;
     std::stack<T> max_stk;
 
-public:
-    Two_stk() {
-        min_stk.push(std::numeric_limits<T> ::max());
-        max_stk.push(std::numeric_limits<T> ::min());
+  public:
+    Stk() {
+        min_stk.push(std::numeric_limits<T>::max());
+        max_stk.push(std::numeric_limits<T>::min());
     }
 
     void push(T x) {
@@ -39,10 +39,10 @@ public:
 };
 
 template <typename T> class MNX_stk {
-private:
-    Two_stk<T> stk1, stk2;
+  private:
+    Stk<T> stk1, stk2;
 
-public:
+  public:
     void push(T x) { stk2.push(x); }
 
     void pop() {
@@ -95,6 +95,6 @@ int main() {
         stk.pop();
         std::cout << stk.min() << ' ' << stk.max() << '\n';
     }
-    
+
     return 0;
 }
